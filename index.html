@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestor de Tareas | Erick Programador</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="background-animation"></div>
+    
+    <header>
+        <h1>Gestor de Tareas</h1>
+        <div class="header-actions">
+            <button id="add-task-btn" class="btn primary">
+                <span class="material-icons">add</span> Nueva Tarea
+            </button>
+            <button id="theme-toggle" class="btn icon">
+                <span class="material-icons">brightness_4</span>
+            </button>
+        </div>
+    </header>
+
+    <main>
+        <div id="tasks-container" class="tasks-grid"></div>
+        
+        <!-- Modal para agregar/editar tareas -->
+        <div id="task-form-modal" class="modal">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h2 id="modal-title">Nueva Tarea</h2>
+                    <button id="close-modal" class="btn icon">
+                        <span class="material-icons">close</span>
+                    </button>
+                </div>
+                <form id="task-form">
+                    <input type="hidden" id="task-id">
+                    <div class="form-group">
+                        <label for="task-title">Título</label>
+                        <input type="text" id="task-title" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="task-description">Descripción</label>
+                        <textarea id="task-description" rows="4"></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label>Color</label>
+                        <div class="color-options">
+                            <div class="color-option default selected" data-color="default"></div>
+                            <div class="color-option blue" data-color="blue"></div>
+                            <div class="color-option red" data-color="red"></div>
+                            <div class="color-option green" data-color="green"></div>
+                            <div class="color-option yellow" data-color="yellow"></div>
+                            <div class="color-option purple" data-color="purple"></div>
+                        </div>
+                    </div>
+                    <div class="form-actions">
+                        <button type="button" id="cancel-task" class="btn">Cancelar</button>
+                        <button type="submit" class="btn primary">Guardar</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <!-- Modal de confirmación para eliminar -->
+        <div id="confirm-modal" class="modal">
+            <div class="modal-content small">
+                <div class="modal-header">
+                    <h2>Confirmar eliminación</h2>
+                    <button class="btn icon close-confirm-modal">
+                        <span class="material-icons">close</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <p>¿Estás seguro que deseas eliminar esta tarea?</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn cancel-delete">Cancelar</button>
+                    <button type="button" class="btn primary confirm-delete">Eliminar</button>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>DESARROLLADO POR ERICK PROGRAMADOR</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
